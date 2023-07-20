@@ -223,9 +223,9 @@ def parse_opt():
     parser = argparse.ArgumentParser()
     parser.add_argument('--yolo-model', type=Path, default=WEIGHTS / 'yolov8n.pt', help='model.pt path(s)')
     parser.add_argument('--reid-model', type=Path, default=WEIGHTS / 'mobilenetv2_x1_4_dukemtmcreid.pt')
-    parser.add_argument('--tracking-method', type=str, default='deepocsort',
+    parser.add_argument('--tracking-method', type=str, default='ocsort',
                         help='deepocsort, botsort, strongsort, ocsort, bytetrack')
-    parser.add_argument('--source', type=str, default='0',
+    parser.add_argument('--source', type=str, default=r'F:\pythonApp\yolo_tracking\examples\video\dyh.mp4',
                         help='file/dir/URL/glob, 0 for webcam')
     parser.add_argument('--imgsz', '--img', '--img-size', nargs='+', type=int, default=[640],
                         help='inference size h,w')
@@ -235,7 +235,7 @@ def parse_opt():
                         help='intersection over union (IoU) threshold for NMS')
     parser.add_argument('--device', default='',
                         help='cuda device, i.e. 0 or 0,1,2,3 or cpu')
-    parser.add_argument('--show', action='store_true',
+    parser.add_argument('--show', action='store_true',default=True,
                         help='display tracking video results')
     parser.add_argument('--save', action='store_true',
                         help='save video tracking results')
