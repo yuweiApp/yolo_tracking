@@ -25,7 +25,7 @@ val_utils/
 
 # zip files
 *.zip
-
+.idea/
 # exports
 *_openvino_model
 *.torchscript
